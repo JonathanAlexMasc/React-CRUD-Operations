@@ -1,33 +1,28 @@
-import { useState } from "react";
-import '../index.css';
+import { useState } from 'react';
 
-//onCreate name stays the same as in App.js
-function BookCreate({onCreate}) { //same as searchBar
-    
-    const [title, setTitle] = useState('');
+function BookCreate({ onCreate }) {
+  const [title, setTitle] = useState('');
 
-    //just boiler plate stuff for getting input 
-    //in react
-    const handleChange = (event) => {
-        setTitle(event.target.value);
-    };
+  const handleChange = (event) => {
+    setTitle(event.target.value);
+  };
 
-    //prevent undesirable browser behavior
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        onCreate(title); //see argument
-        setTitle(''); //empty our form
-    };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onCreate(title);
+    setTitle('');
+  };
 
-    return <div className="book-create">
-        <h3>Add a Book</h3>
-        <form onSubmit={handleSubmit}> 
-            <label>Title</label>
-            <input className='input' value={title} onChange={handleChange} />
-            <button className="button">Create!</button>
-        </form>
+  return (
+    <div className="book-create">
+      <h3>Add a Book</h3>
+      <form onSubmit={handleSubmit}>
+        <label>Title</label>
+        <input className="input" value={title} onChange={handleChange} />
+        <button className="button">Create!</button>
+      </form>
     </div>
-
+  );
 }
 
 export default BookCreate;

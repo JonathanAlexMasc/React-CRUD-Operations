@@ -19,3 +19,6 @@ You may also see any lint errors in the console.
 A convoluted method of building the app which involved using several different props which remained unused as they were passed down along child components. 
 
 
+## Part 2 of 3 - Using an API to store existing data
+
+Made requests to a JSON database to store data created inside the web application. Used other features to update and delete the data in the JSON file to reflect changes inside the web application. 
